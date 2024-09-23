@@ -186,15 +186,15 @@ def train(hyp, opt, device, callbacks):  # hyp is path/to/hyp.yaml or hyp dictio
     # Resume
     start_epoch, best_fitness = 0, 0.0
     if pretrained:
-        # Optimizer
-        if ckpt['optimizer'] is not None:
-            optimizer.load_state_dict(ckpt['optimizer'])
-            best_fitness = ckpt['best_fitness']
+        # # Optimizer
+        # if ckpt['optimizer'] is not None:
+        #     optimizer.load_state_dict(ckpt['optimizer'])
+        #     best_fitness = ckpt['best_fitness']
 
-        # EMA
-        if ema and ckpt.get('ema'):
-            ema.ema.load_state_dict(ckpt['ema'].float().state_dict())
-            ema.updates = ckpt['updates']
+        # # EMA
+        # if ema and ckpt.get('ema'):
+        #     ema.ema.load_state_dict(ckpt['ema'].float().state_dict())
+        #     ema.updates = ckpt['updates']
 
         # Epochs
         start_epoch = ckpt['epoch'] + 1
